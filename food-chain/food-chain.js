@@ -1,8 +1,10 @@
 var song = {
+
     animals: ['fly', 'spider', 'bird',
               'cat', 'dog', 'goat', 'cow',
               'horse'],
-    exclam: ["I don't know why she swallowed the fly. Perhaps she'll die.",
+
+    exclaim: ["I don't know why she swallowed the fly. Perhaps she'll die.",
               "It wriggled and jiggled and tickled inside her.",
               "How absurd to swallow a bird!",
               "Imagine that, to swallow a cat!",
@@ -15,16 +17,16 @@ var song = {
         var v = [];
         v.push("I know an old lady who swallowed a " + 
                       this.animals[n-1] + ".")
-        v.push(this.exclam[n-1])
+        v.push(this.exclaim[n-1])
         if (n === 8 || n === 1) {
             return v.join('\n') + '\n'
         }
         for (var i=n-1; i>0; i--) {
-            var end = i !== 2 ? "." : this.exclam[1].replace("It", " that");
+            var end = i !== 2 ? "." : this.exclaim[1].replace("It", " that");
             v.push("She swallowed the " + this.animals[i] + 
                      " to catch the " + this.animals[i-1] + end)
         }
-        v.push(this.exclam[0])
+        v.push(this.exclaim[0])
         return v.join('\n') + '\n'
     },
     
