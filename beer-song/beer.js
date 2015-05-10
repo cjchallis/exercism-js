@@ -32,11 +32,14 @@ var Beer = {
         return 'Take ' + one + 'down and pass it around, ';        
     },
 
-    sing: function(a, b) {
-        var verses = [];
-        for (var i = a; i >== b; i--) {
-            verses.push(this.verse(i));
+    sing: function(start, stop) {
+        if (stop === undefined) {
+            stop = 0                
         }
-        return verses.join('\n') + '\n';
+        var s = []
+        for (var i = start; i >= stop; i--){
+            s.push(this.verse(i));
+        }
+        return s.join('\n');
     }
 };    
